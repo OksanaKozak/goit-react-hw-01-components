@@ -1,19 +1,21 @@
+import user from './user.json';
+import App from '..//App';
 
-
-    const user = (
+export default function User({username, tag, location, avatar, stats}) {
+return (
       <div class="profile">
       <div class="description">
         <img
-          src="https://cdn-icons-png.flaticon.com/512/2922/2922506.png"
-          alt="User avatar"
+          src={avatar}
+          alt={username}
           class="avatar"
         />
-        <p class="name">Jacques Gluke</p>
-        <p class="tag">@jgluke</p>
-        <p class="location">Ocho Rios, Jamaica</p>
+        <p class="name">{username}</p>
+        <p class="tag">{tag}</p>
+        <p class="location">{location}</p>
       </div>
     
-      <ul class="stats">
+      <ul class="stats">{stats}
         <li>
           <span class="label">Followers</span>
           <span class="quantity">1000</span>
@@ -29,5 +31,5 @@
       </ul>
     </div>
     );
-    console.log(user);
-    
+}
+ReactDOM.render(<App />, document.querySelector('#root'));
